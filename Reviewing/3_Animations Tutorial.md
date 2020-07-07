@@ -26,3 +26,16 @@
 * If we are using the CurvedAnimation() class, __then we are not going to use the controller.value but instead we are going to use the animation.value.__
 * What if you want the animation to go backwards? __For that to happen, you must use controller.reverse() instead of using controller.forward(). A good practice is to put the optional parameter in the .reverse() method: The parameter is from. By default, your code should look like this: controller.reverse(from: 1.0).__
 
+## Making an Animation goes forwards and then backwards.
+```dart
+controller.forward();
+
+animation.addStatusListener((status) {
+ if(status == AnimationStatus.completed){
+  controller.reverse(from: 1.0);
+ }else if(status == AnimationStatus.dismissed){
+  controller.forward();
+ }
+});
+```
+
