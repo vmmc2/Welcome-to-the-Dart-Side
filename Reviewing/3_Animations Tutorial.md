@@ -50,3 +50,4 @@ animation.addStatusListener((status) {
     return;
   }
 ```
+## NOTE: Tweens() are a really useful way to build an animation in a simple manner.
